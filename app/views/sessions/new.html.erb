@@ -2,18 +2,20 @@
 
 <%= form_with url: sign_in_path do |form| %>
 
-<div class="mb-3">
+<div class="mb-3 p-2">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control", placeholder: "example@example.com" %>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 p-2">
     <%= form.label :password %>
     <%= form.password_field :password, class: "form-control", placeholder: "password" %>
-    <%= link_to "Forgot your password?", password_reset_path %>
+    <div class="mb-3 p-1">
+      <%= link_to "Forgot your password?", password_reset_path %>
+    </div>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3 p-2">
     <%= form.submit "Sign In", class: "btn btn-primary" %>
   </div>
 

@@ -1,4 +1,31 @@
-<div class="d-flex align-items-center justify-content-center">
-  <h1>Github Account</h1>
+<div class="d-flex">
+  <% hour = DateTime.now.hour 
+  case hour
+  when ..11
+    greeting = "Bom dia"
+  when 12..18
+    greeting = "Boa tarde"
+  when 18..23
+    greeting = "Boa noite"
+  end
+  %>
+
+  <div class="container m-5">
+    <div class="row g-0">
+      <div class="col-sm-8 d-flex justify-content-center">
+        <img class="rounded float-start img-thumbnail border border-secondary border-2 shadow p-3 pb-5 mb-5 bg-body rounded" src="<%= @cats.last['medium'] %>">
+      </div>
+      <div class="d-flex flex-column align-items-center col-sm-4 justify-content-center">
+        <figure class="text-center">
+          <blockquote class="blockquote lead">
+            <p>"<%= greeting %> amigo. <%= @message %>"</p>
+          </blockquote>
+          <figcaption class="blockquote-footer display-6">
+            <%= @author %>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
 </div>
 
